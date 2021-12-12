@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage("Pull Latest Image"){
 			steps{
-				sh "docker pull krif07/selenium-docker"
+				sh "docker pull krif07/selenium-docker:latest"
 			}
 		}
 		stage("Start Grid"){
