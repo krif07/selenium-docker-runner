@@ -16,7 +16,7 @@ pipeline{
 		}
 		stage("Run Test"){
 			steps{
-				bat "docker-compose up search-module-chrome search-module-firefox book-flight-module-chrome book-flight-module-firefox"
+				bat "docker-compose up search-module book-flight-module"
 			}
 		}
 	}
@@ -24,7 +24,7 @@ pipeline{
 		always{
 			archiveArtifacts artifacts: 'output/**'
 			bat "docker-compose down"
-			bat "rm -rf output/"
+			//sh "sudo rm -rf output/"
 		}
 	}
 }
