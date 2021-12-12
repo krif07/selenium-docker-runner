@@ -13,7 +13,7 @@ pipeline{
 		}
 		stage("Run Test"){
 			steps{
-				sh "docker-compose up search-module book-flight-module"
+				sh "docker-compose up search-module-chrome search-module-firefox book-flight-module-chrome book-flight-module-firefox"
 			}
 		}
 	}
